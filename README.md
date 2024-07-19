@@ -1,5 +1,5 @@
 # Student Affairs Website
-Implemented Using HTML, CSS, JavaScript and sing Django Framework
+Implemented Using HTML, CSS, JavaScript and Django Framework
 
 ## Features
 - User add a new student to the system. Student information includes id, name, date of birth, GPA, gender, level, status=”active”, “inactive”, department, email, mobile number. 

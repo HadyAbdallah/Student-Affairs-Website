@@ -1,0 +1,81 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block contant %}
+<head>
+    <title>Update</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="{% static 'css/update.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{% static 'js/Serch-Updete (1).js' %} "></script>
+  </head>
+  <h2> Update student information </h2>
+  <div id="form">
+    <form method="post" action="{% url 'Update' Student.ID %}">
+      {% csrf_token %}
+      Name : <input type="text" class="input" size="50" maxlength="40" name="Student name" value="{{Student.Name}}"><br />
+      <hr width="400">
+      ID : <input type="text" class="input" size="50" maxlength="8" name="Student ID" value={{Student.ID}}><br />
+      <hr width="400">
+        GPA : <input type="text" class="input" size="50" maxlength="4" name="Student GPA" value={{Student.GPA}}><br />
+        <hr width="400">
+        Email : <input type="text" class="input" size="50" maxlength="40" name="Student Email" value={{Student.Email}}><br />
+        <hr width="400">
+        Mobile Number : <input type="text" class="input" size="50" maxlength="11" name="Student Mobilenum" value={{Student.Phone}}><br><br>
+        <hr width="400">
+      {% if Student.Level == "First Level" %}
+          Level : <select name="Level" class="input">
+          <option selected>First Level </option>
+          <option>Second Level</option>
+          <option>Third Level</option>
+          <option>Fourth Level</option>
+          </select>
+      {% elif Student.Level == "Second Level" %}
+          Level : <select name="Level" class="input">
+          <option>First Level </option>
+          <option selected>Second Level</option>
+          <option>Third Level</option>
+          <option>Fourth Level</option>
+          </select>
+      {% elif Student.Level == "Third Level" %}
+          Level : <select name="Level" class="input">
+          <option>First Level </option>
+          <option>Second Level</option>
+          <option selected>Third Level</option>
+          <option>Fourth Level</option>
+          </select>
+      {% elif Student.Level == "Fourth Level" %}
+          Level : <select name="Level" class="input">
+          <option>First Level </option>
+          <option>Second Level</option>
+          <option>Third Level</option>
+          <option selected>Fourth Level</option>
+          </select>
+      {% endif %}
+      <hr width="400">
+        Department : <input type="text" class="input" size="50" maxlength="20" name="Department" disabled value="{{Student.Department}}" ><br />
+        <hr width="400">
+        Date of birth : <input type="text" class="input" name="birthday" max="2010-01-01" min="1950-01-01" value="{{Student.DateOfBirth}}"><br />
+        <hr width="400">
+
+      {% if Student.Gender == "Male" %}
+      gender : <input type="radio" name="Sex" value="Male" checked><i class="fa fa-male" aria-hidden="true"></i>  Male
+      <input type="radio" name="Sex" value="Female"><i class="fa fa-female" aria-hidden="true"></i>  Female <br />
+      <hr width="400">
+      {% else %}
+      gender : <input type="radio" name="Sex" value="Male" ><i class="fa fa-male" aria-hidden="true"></i>  Male
+      <input type="radio" name="Sex" value="Female"checked><i class="fa fa-female" aria-hidden="true"></i>  Female <br />
+      <hr width="400">
+      {% endif %}
+
+      {% if Student.Status == "Active" %}
+      Status : <input type="radio" name="Status" value="Active" checked>Active
+      <input type="radio" name="Status" value="Inactive">Inactive <br />
+      {% else %}
+      Status : <input type="radio" name="Status" value="Active" >Active
+      <input type="radio" name="Status" value="Inactive" checked>Inactive <br />
+      {% endif %}
+      <a href="delete/{{Student.ID}}" class="Choice" type="button" onclick="return confirmDelete();">Delete student date</a>
+      <button class="Choice" type="submit" >Update</button>
+  </form>
+</div> 
+{% endblock contant %}

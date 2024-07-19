@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    </head>
+    <body>
+        <div class="home">
+            <h2> Choose a Website: </h2> <br>
+           <input type="button" value="Human Resources"> <br><br>
+           <form action="{% url 'login'%}">
+               <input type="submit" value="Students Affairs"> <br><br>
+            </form>
+            <input type="button" value="Higher Studies"> <br><br>
+            <input type="button" value=" Laboratory Tracking"> <br><br>
+        </div>
+    </body>
+</html>

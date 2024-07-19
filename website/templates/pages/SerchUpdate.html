@@ -1,0 +1,20 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block contant %}
+<head>
+  <title> Search Update</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+  <link rel="stylesheet" href="{% static 'css/searchUpdate.css' %}">
+  <script src="{% static 'js/Serch-Updete (1).js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<h2> Write ID for the student you want to update: </h2>
+<form onsubmit="return ceackSerch();" action="{% url 'student'  %}" method="GET">
+  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+  <input type="search" id="search" size="60" maxlength="8" name="searchID">
+  <input class="button" type="submit" value="Get student" >
+</form>
+
+
+
+{% endblock contant %}

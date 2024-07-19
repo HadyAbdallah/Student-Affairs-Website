@@ -1,0 +1,40 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block contant %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Search </title>
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+    <script src="{% static 'js/validation_search.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<h2> Write student name to search for: </h2>
+<form method="post">
+  {% csrf_token %}
+  <i class="fa fa-search" aria-hidden="true"></i>
+  <input type="search" id="search" name="search" placeholder="Search..">
+  <input class="button" type="submit" value="Get student" onclick="return checkSearch();">
+</form>
+
+
+<form action="{% url 'dep' %}" method="post">
+  {% csrf_token %}
+    <br>
+    Level: <select name="Level" id="select" class="input">
+        <option selected disabled>Student Level</option>
+          <option>First Level </option>
+          <option>Second Level</option>
+          <option id="right">Third Level</option>
+          <option>Fourth Level</option>
+      </select>
+      <input class="button" type="submit" value="Assign a department" onclick="return checkLevelName();" >
+    <br>
+    
+</form>
+</body>
+</html>
+
+{% endblock contant %}

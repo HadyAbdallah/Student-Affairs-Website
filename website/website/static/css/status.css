@@ -1,0 +1,140 @@
+body {
+    background-image: url('../img/other.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    text-align: center;
+  }
+  form.search input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 75%;
+    background: #f1f1f1;
+  }
+  .search{
+    position: relative;
+     top: 50px;
+    }
+
+  form.search::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  table {
+    position: relative;
+    /* top: 100px;*/
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    font-size: 25px;
+  }
+  td, th, tr {
+    font-family: arial, sans-serif;
+    border-collapse:inherit;
+    width: 35%;
+    font-weight: bold;
+    vertical-align: inherit;
+    text-align:center;
+  }
+  td{
+    width:100px;
+    height:20px;
+    font-size: 20px;
+  }
+  div {
+    padding: 8px;
+  } 
+  p {
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 3px;
+  }
+  .navbar {
+    width: 100%;
+    background-color: rgba(11, 43, 66, 0.82);
+    overflow: hidden;
+    float: left;
+    padding: 0;
+  
+  }
+  
+  .navbar a {
+    float: left;
+    padding: 13px 16px;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    display: block;
+  }
+  
+  .navbar a:hover {
+    background-color: rgb(234, 75, 17);
+  }
+  .active {
+    background-color: rgba(234, 75, 17, 0.77);
+  }
+/*css search style*/
+input[type=search]{
+  width: 180px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 2px solid rgba(11, 43, 66, 0.82);
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
+input[type=search]:focus {
+  width: 50%;
+}
+
+/*CSS for botton*/
+input[type=submit]{
+  background-color: rgba(4, 29, 45, 0.82);
+  color: white;
+  border: none;
+  padding: 6px 5px;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 11px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.button:hover{
+  background-color: rgba(234, 75, 17, 0.75);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.42),0 17px 50px 0 rgba(0, 0, 0, 0.56);
+}
+
+/*css for style table*/
+#Student {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  top: 100px;
+  position: relative;
+}
+
+#Student td, #Student th {
+  border: 2px solid rgba(11, 43, 66, 0.82);
+  padding: 8px;
+}
+
+#Student tr:nth-child(even){background-color: #f2f2f2;}
+
+/* #Student tr:hover {background-color: rgba(54, 80, 94, 0.69);} */
+
+#Student th {
+  text-align: left;
+  background-color: rgba(234, 75, 17,0.77);
+  color: #000000;
+}

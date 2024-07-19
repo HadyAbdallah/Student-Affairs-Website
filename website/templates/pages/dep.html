@@ -1,0 +1,38 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block contant %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="for_dropdown.css">
+    <title> Assign a department </title>
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/for_dropdown.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<h2>Choose a Department</h2>
+<div id="form">
+<form method="post">
+    {% csrf_token %}
+    Student Name :<input type="text" class="input" size="50" maxlength="40" name="Student name" placeholder="Student name"><br />
+    <hr width="400">
+    Student ID :<input type="text" class="input" size="50" maxlength="8" name="Student ID" placeholder="Student ID"><br />
+    <hr width="400">
+    Department: <select name="Department" id="Dep"  class="input">
+    <option selected disabled> Choose a Department </option>
+    <option> Computer Science </option>
+    <option> Information System </option>
+    <option> Artificial Intelligence </option>
+    <option> Information Technology </option>
+    <option> Decision Support </option>
+</select>
+    <hr width="400">
+    <input class="button" type="submit">
+</form>
+</div>
+</body>
+</html>
+{% endblock contant %}

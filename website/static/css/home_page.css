@@ -1,0 +1,64 @@
+body{
+  background: url('../img/BackGr16.png');
+  background-repeat: no-repeat;
+  background-size: 1550px 875px;
+  }  
+
+div {
+  padding: 8px;
+} 
+
+
+ h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke-width: 0.50px;
+  -webkit-text-stroke-color: rgb(40, 108, 172);
+  top: 18px;
+  left: 10px;
+}
+
+
+p {
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 3px;
+}
+
+a {
+  text-decoration: none;
+  color: #008CBA;
+}
+ ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+ }
+
+.navbar {
+  width: 100%;
+  background-color: rgba(16, 117, 190, 0.82);
+  overflow: hidden;
+  float: left;
+  padding: 0;
+
+}
+
+.navbar a {
+  float: left;
+  padding: 13px 16px;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+  display: block;
+}
+
+.navbar a:hover {
+  background-color: rgb(234, 75, 17);
+}
+.active {
+  background-color: rgba(234, 75, 17, 0.77);
+}

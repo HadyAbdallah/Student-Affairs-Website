@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>LoGin Form</title>
+       <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+       <link rel="stylesheet" href="{% static 'css/login.css' %}">
+       <script src="{% static 'js/login.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+        <!-- <button onclick="document.getElementsByClassName('login').style.display='block'" style="width:auto;">Login</button> -->
+        <div id="log" class="login">
+            <h1><i class="fa fa-sign-in" aria-hidden="true"></i> Login Here</h1>
+            <form action="{% url 'Home' %}" class="content animate" onsubmit="return validation();" method="post">
+                {% csrf_token %}
+                <p><i class="fa fa-user" aria-hidden="true"></i> Username</p>
+                <input type="text" name="username" id="name" placeholder="Enter username">
+                <p><i class="fa fa-unlock-alt" aria-hidden="true"></i> Password</p>
+                <input type="password" name="passworod" id="pass" placeholder="Enter passworod">
+                <input type="submit" name="login" value="login"><br>
+                <a href="#" onclick="f();"> foroget your passworod</a><br>
+                <a href="#" onclick="c();"> Create an account</a>
+            </form>
+        </div>
+    </body>
+</html>

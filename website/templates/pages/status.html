@@ -1,0 +1,50 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block contant %}
+<!doctype html>
+<html>
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+    <title>search for students</title>
+    <meta name="description" content="students" />
+    <meta name ="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'js/Serch-Updete (1).js ' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/status.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<h2> Search for Active student </h2>
+<form method="post">
+    {% csrf_token %}
+    <i class="fa fa-search" aria-hidden="true"></i>
+    <input type="search" id="search" size="60" maxlength="8" name="ID">
+    <input class="button" type="submit" value="Get student" onclick="return ceackSerchstatus();">
+</form>
+<table id="Student" align="center"> 
+      <tr>
+          <th>Name</th>
+          <th>ID</th>
+          <th>Status</th>
+      </tr>
+      {% for x in student %}
+      <tr>
+          <td>{{x.Name}}</td>
+          <td>{{x.ID}}</td>
+          {% if x.Status == "Active" %}
+          <td>
+              <input type="radio" name={{x.Name}} value="active" checked>Active
+              <input type="radio" name={{x.Name}} value="inactive">Inactive
+          </td> 
+          {% else %}
+          <td>
+            <input type="radio" name={{x.Name}} value="active" >Active
+            <input type="radio" name={{x.Name}} value="inactive" checked>Inactive
+        </td> 
+          {% endif  %}
+      {% endfor %}
+      </tr>
+
+  </body>
+</html>
+
+{% endblock contant %}
